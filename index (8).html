@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Marcos Flores Panadero — Estudiante de Ingeniería Mecánica en la ETSIDI Madrid. Diseño CAD, CNC, AutoCAD, Inventor, Fusion 360, Step 7.">
+  <meta name="keywords" content="Marcos Flores Panadero, Ingeniería Mecánica, ETSIDI, CAD, AutoCAD, Inventor, Fusion 360, CNC, CAM, Step 7, WinUnisoft, Sandvik, Madrid">
+  <meta property="og:title" content="Marcos Flores Panadero — Ingeniería Mecánica">
+  <meta property="og:description" content="Web personal de Marcos Flores Panadero, estudiante de Ingeniería Mecánica en la ETSIDI.">
+  <title>Marcos Flores Panadero — Ingeniería Mecánica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f8f6f1; --bg2: #efefea; --text: #1a1a18; --text2: #5a5a56;
+      --text3: #999992; --border: rgba(0,0,0,0.10); --border2: rgba(0,0,0,0.18);
+      --green: #3B6D11;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141412; --bg2: #1e1e1b; --text: #f0ede6; --text2: #a09d96;
+        --text3: #6a6862; --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.14);
+        --green: #97C459;
+      }
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; }
+    .container { max-width: 960px; margin: 0 auto; border-left: 0.5px solid var(--border); border-right: 0.5px solid var(--border); min-height: 100vh; }
+    .hero { display: grid; grid-template-columns: 1fr auto; align-items: start; border-bottom: 0.5px solid var(--border); padding: 3rem 2.5rem 2.5rem; gap: 2rem; }
+    .hero-left { display: flex; flex-direction: column; gap: 1.5rem; }
+    .avatar { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 0.5px solid var(--border2); }
+    .mono-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: var(--text3); text-transform: uppercase; display: block; margin-bottom: 0.75rem; }
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 52px); line-height: 1.05; color: var(--text); font-weight: 700; }
+    h1 em { font-style: italic; color: var(--text3); font-weight: 400; }
+    .hero-bio { font-size: 13.5px; color: var(--text2); line-height: 1.7; max-width: 480px; }
+    .status-line { display: flex; align-items: center; gap: 7px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--green); }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse 2.5s ease-in-out infinite; flex-shrink: 0; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .contact-links { display: flex; flex-direction: column; gap: 10px; }
+    .c-link { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text2); text-decoration: none; transition: color .15s; }
+    .c-link:hover { color: var(--text); }
+    .c-link svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .stats-band { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 0.5px solid var(--border); }
+    .stat-box { padding: 1.5rem; border-right: 0.5px solid var(--border); display: flex; flex-direction: column; gap: 4px; }
+    .stat-box:last-child { border-right: none; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--text); line-height: 1; }
+    .stat-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.1em; color: var(--text3); text-transform: uppercase; }
+    .content-grid { display: grid; grid-template-columns: 200px 1fr; border-bottom: 0.5px solid var(--border); }
+    .sidebar { border-right: 0.5px solid var(--border); padding: 2rem 1.5rem; }
+    .main-col { padding: 2rem 2.5rem; }
+    .section-label { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.14em; color: var(--text3); text-transform: uppercase; display: block; margin-bottom: 1.25rem; }
+    .skill-row { margin-bottom: 1.1rem; }
+    .skill-name { font-size: 12px; font-weight: 600; margin-bottom: 5px; color: var(--text); }
+    .skill-bar { height: 2px; background: var(--border2); border-radius: 1px; }
+    .skill-fill { height: 2px; border-radius: 1px; background: var(--text); }
+    .lang-item { margin-bottom: 1rem; }
+    .lang-name { font-size: 12px; font-weight: 600; margin-bottom: 2px; color: var(--text); }
+    .lang-cert { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--text3); }
+    .exp-entry { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 0.5px solid var(--border); }
+    .exp-entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 5px; }
+    .exp-role { font-family: 'Playfair Display', serif; font-size: 18px; font-style: italic; color: var(--text); }
+    .exp-badge { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--text3); background: var(--bg2); padding: 3px 8px; border-radius: 3px; border: 0.5px solid var(--border2); white-space: nowrap; flex-shrink: 0; margin-top: 4px; }
+    .exp-org { font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text3); margin-bottom: 8px; }
+    .exp-desc { font-size: 13px; color: var(--text2); line-height: 1.65; }
+    .projects-section { border-bottom: 0.5px solid var(--border); }
+    .proj-header { padding: 1.5rem 2rem 0.75rem; border-bottom: 0.5px solid var(--border); }
+    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .proj-cell { padding: 1.75rem 2rem; border-right: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
+    .proj-cell:nth-child(2n) { border-right: none; }
+    .proj-cell:nth-last-child(-n+2) { border-bottom: none; }
+    .proj-num { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--text3); display: block; margin-bottom: 8px; }
+    .proj-title { font-family: 'Playfair Display', serif; font-size: 17px; margin-bottom: 7px; color: var(--text); }
+    .proj-body { font-size: 12.5px; color: var(--text2); line-height: 1.6; margin-bottom: 10px; }
+    .proj-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 12px; }
+    .proj-tag { font-size: 10px; font-family: 'IBM Plex Mono', monospace; color: var(--text3); background: var(--bg2); padding: 2px 8px; border-radius: 3px; border: 0.5px solid var(--border); }
+    .dl-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-family: 'IBM Plex Mono', monospace; padding: 6px 12px; border-radius: 4px; border: 0.5px solid var(--border2); color: var(--text2); text-decoration: none; margin-top: 10px; margin-right: 6px; transition: all .15s; }
+    .dl-btn:hover { color: var(--text); border-color: var(--text); }
+    .dl-btn svg { width: 12px; height: 12px; }
+    .footer-bar { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; border-top: 0.5px solid var(--border); flex-wrap: wrap; gap: 12px; }
+    .footer-left { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--text3); }
+    .footer-links { display: flex; gap: 8px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-family: 'Syne', sans-serif; font-weight: 600; padding: 8px 16px; border-radius: 4px; border: 0.5px solid var(--border2); color: var(--text2); text-decoration: none; transition: all .15s; }
+    .btn:hover { color: var(--text); border-color: var(--text); }
+    .btn-dark { background: var(--text); color: var(--bg); border-color: var(--text); }
+    .btn-dark:hover { opacity: 0.85; color: var(--bg); }
+    .btn svg { width: 14px; height: 14px; }
+    @media (max-width: 680px) {
+      .hero { grid-template-columns: 1fr; }
+      .stats-band { grid-template-columns: 1fr 1fr; }
+      .stat-box:nth-child(2) { border-right: none; }
+      .stat-box:nth-child(3) { border-right: 0.5px solid var(--border); }
+      .content-grid { grid-template-columns: 1fr; }
+      .sidebar { border-right: none; border-bottom: 0.5px solid var(--border); }
+      .projects-grid { grid-template-columns: 1fr; }
+      .proj-cell { border-right: none; border-bottom: 0.5px solid var(--border); }
+      .proj-cell:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header class="hero">
+    <div class="hero-left">
+      <div>
+        <span class="mono-label">Web personal · Madrid, ES · ETSIDI – UPM</span>
+        <h1>Marcos<br>Flores <em>Panadero</em></h1>
+      </div>
+      <p class="hero-bio">Soy de los que necesita entender cómo funciona algo antes de darlo por bueno. Eso me llevó a Ingeniería Mecánica en la ETSIDI. Diseño, fabrico y automatizo — del modelo 3D a la pieza real.</p>
+      <div class="status-line"><span class="dot"></span>Disponible para prácticas — Madrid</div>
+      <nav class="contact-links">
+        <a class="c-link" href="https://www.linkedin.com/in/marcosflorespanaderoigmec/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          linkedin.com/in/marcosflorespanaderoigmec
+        </a>
+        <a class="c-link" href="mailto:marcosflores2222@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          marcosflores2222@gmail.com
+        </a>
+      </nav>
+    </div>
+    <img class="avatar" src="data:image/jpeg;base64,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" alt="Marcos Flores Panadero">
+  </header>
+
+  <div class="stats-band">
+    <div class="stat-box"><div class="stat-num">CAD</div><div class="stat-lbl">Inventor · AutoCAD</div></div>
+    <div class="stat-box"><div class="stat-num">CNC</div><div class="stat-lbl">CAM · WinUnisoft</div></div>
+    <div class="stat-box"><div class="stat-num">B2</div><div class="stat-lbl">Inglés · LanguageCert</div></div>
+    <div class="stat-box"><div class="stat-num">UPM</div><div class="stat-lbl">ETSIDI · 3º curso</div></div>
+  </div>
+
+  <div class="content-grid">
+    <aside class="sidebar">
+      <span class="section-label">Herramientas</span>
+      <div class="skill-row"><div class="skill-name">Autodesk Inventor</div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+      <div class="skill-row"><div class="skill-name">AutoCAD</div><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div></div>
+      <div class="skill-row"><div class="skill-name">Fusion 360 (CAM)</div><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
+      <div class="skill-row"><div class="skill-name">CNC · WinUnisoft</div><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+      <div class="skill-row"><div class="skill-name">Step 7 · PLC Siemens</div><div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div></div>
+      <div class="skill-row"><div class="skill-name">Ansys Granta</div><div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div></div>
+      <div class="skill-row"><div class="skill-name">MATLAB</div><div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div></div>
+      <div class="skill-row"><div class="skill-name">MITCalc · SAM</div><div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div></div>
+      <div class="skill-row"><div class="skill-name">Excel avanzado</div><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+      <span class="section-label" style="margin-top:2rem">Idiomas</span>
+      <div class="lang-item"><div class="lang-name">Español</div><div class="lang-cert">Nativo</div></div>
+      <div class="lang-item"><div class="lang-name">Inglés</div><div class="lang-cert">B2 — LanguageCert</div></div>
+      <span class="section-label" style="margin-top:2rem">Base técnica</span>
+      <div style="font-size:12px; color:var(--text2); line-height:1.8">
+        Mecánica de fluidos<br>Termodinámica<br>Resistencia de materiales<br>Ciencia de materiales<br>Automática<br>Soldadura · Metrología
+      </div>
+    </aside>
+    <main class="main-col">
+      <span class="section-label">Experiencia y formación</span>
+      <div class="exp-entry">
+        <div class="exp-header">
+          <div class="exp-role">Grado en Ingeniería Mecánica</div>
+          <span class="exp-badge">2022 — actual</span>
+        </div>
+        <div class="exp-org">ETSIDI · Universidad Politécnica de Madrid</div>
+        <p class="exp-desc">3.º curso. Formación en diseño mecánico, fabricación, automatización industrial, mecánica de fluidos, termodinámica y resistencia de materiales. Inglés B2 — LanguageCert.</p>
+      </div>
+      <div class="exp-entry">
+        <div class="exp-header">
+          <div class="exp-role">Profesor particular</div>
+          <span class="exp-badge">2022 — actual</span>
+        </div>
+        <div class="exp-org">Excel avanzado y Matemáticas · Madrid</div>
+        <p class="exp-desc">Clases de Excel (tablas dinámicas, fórmulas avanzadas, automatización) y Matemáticas a alumnos de ESO y Bachillerato.</p>
+      </div>
+    </main>
+  </div>
+
+  <section class="projects-section">
+    <div class="proj-header">
+      <span class="section-label" style="margin-bottom:0">Proyectos técnicos</span>
+    </div>
+    <div class="projects-grid">
+
+      <div class="proj-cell">
+        <span class="proj-num">01</span>
+        <div class="proj-title">Mecanizado CNC de pieza mecánica</div>
+        <p class="proj-body">Diseño 3D en Inventor y planos en AutoCAD. Selección de herramientas con Sandvik Coromant, programación CAM en Fusion 360 y mecanizado real en torno/fresadora CNC con WinUnisoft.</p>
+        <div class="proj-tags"><span class="proj-tag">Inventor</span><span class="proj-tag">Fusion 360</span><span class="proj-tag">CNC</span><span class="proj-tag">Sandvik</span><span class="proj-tag">WinUnisoft</span></div>
+        <a class="dl-btn" href="https://www.marcosflorespanadero.es/FloresPanadero_Marcos.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Descargar informe de fabricación (PDF)
+        </a>
+      </div>
+
+      <div class="proj-cell">
+        <span class="proj-num">02</span>
+        <div class="proj-title">Exprimidora de naranjas</div>
+        <p class="proj-body">Modelado 3D completo del conjunto en Autodesk Inventor: piezas, ensamblaje, tolerancias y vídeo de montaje animado. Planos de taller con acotación funcional según normativa ISO.</p>
+        <div class="proj-tags"><span class="proj-tag">Inventor</span><span class="proj-tag">ISO</span><span class="proj-tag">Ensamblaje</span></div>
+        <a class="dl-btn" href="https://www.marcosflorespanadero.es/Planos.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Descargar planos (PDF)
+        </a>
+      </div>
+
+      <div class="proj-cell">
+        <span class="proj-num">03</span>
+        <div class="proj-title">Automatización con PLC Siemens</div>
+        <p class="proj-body">Programación de PLC Siemens S7 en Step 7: lógica de control, GRAFCET, bloques OB1/OB100 y simulación con PLCSIM de maqueta neumática con cilindros de doble efecto.</p>
+        <div class="proj-tags"><span class="proj-tag">Step 7</span><span class="proj-tag">Siemens S7</span><span class="proj-tag">GRAFCET</span><span class="proj-tag">PLCSIM</span></div>
+        <a class="dl-btn" href="https://www.marcosflorespanadero.es/Informe.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Descargar informe (PDF)
+        </a>
+      </div>
+
+      <div class="proj-cell">
+        <span class="proj-num">04</span>
+        <div class="proj-title">Selección de materiales</div>
+        <p class="proj-body">Análisis y selección de materiales para componentes mecánicos con Ansys Granta, aplicando la metodología de Ashby según criterios de resistencia, peso y coste.</p>
+        <div class="proj-tags"><span class="proj-tag">Ansys Granta</span><span class="proj-tag">Ashby</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer-bar">
+    <span class="footer-left">Marcos Flores Panadero · Madrid, España</span>
+    <div class="footer-links">
+      <a class="btn" href="https://www.marcosflorespanadero.es/CV.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Descargar CV
+      </a>
+      <a class="btn btn-dark" href="https://www.linkedin.com/in/marcosflorespanaderoigmec/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
